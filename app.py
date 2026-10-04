@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 
-
 class Application:
     def __init__(self):
         self.app = Flask(__name__)
