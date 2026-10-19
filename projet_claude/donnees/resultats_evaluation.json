@@ -1,0 +1,440 @@
+{
+  "mesures": {
+    "nb_photos_testees": 46,
+    "taille_bloc": 10,
+    "pourcent_chiffres_justes": 87.8,
+    "pourcent_index_justes": 54.3,
+    "pourcent_justes_par_position": [
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      100.0,
+      78.3,
+      67.4,
+      56.5
+    ],
+    "pourcent_index_justes_avec_transition": 43.2,
+    "pourcent_index_justes_sans_transition": 100.0,
+    "erreur_mediane_litres_brut": 0,
+    "pourcent_index_justes_apres_filtre": 56.5,
+    "erreur_mediane_litres_apres_filtre": 0,
+    "erreur_max_litres_apres_filtre": 858
+  },
+  "detail": [
+    {
+      "fichier": "2026-10-04_210310.jpg",
+      "horodatage": "2026-10-04 21:03:10",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447039",
+      "transition": true,
+      "index_m3": 447.039
+    },
+    {
+      "fichier": "2026-10-04_210412.jpg",
+      "horodatage": "2026-10-04 21:04:12",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447031",
+      "transition": true,
+      "index_m3": 447.031
+    },
+    {
+      "fichier": "2026-10-04_210514.jpg",
+      "horodatage": "2026-10-04 21:05:14",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447039",
+      "transition": true,
+      "index_m3": 447.039
+    },
+    {
+      "fichier": "2026-10-04_210616.jpg",
+      "horodatage": "2026-10-04 21:06:16",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447039",
+      "transition": true,
+      "index_m3": 447.039
+    },
+    {
+      "fichier": "2026-10-04_210718.jpg",
+      "horodatage": "2026-10-04 21:07:18",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447361",
+      "transition": true,
+      "index_m3": 447.361
+    },
+    {
+      "fichier": "2026-10-04_210820.jpg",
+      "horodatage": "2026-10-04 21:08:20",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447339",
+      "transition": true,
+      "index_m3": 447.339
+    },
+    {
+      "fichier": "2026-10-04_210922.jpg",
+      "horodatage": "2026-10-04 21:09:22",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447031",
+      "transition": true,
+      "index_m3": 447.031
+    },
+    {
+      "fichier": "2026-10-04_211024.jpg",
+      "horodatage": "2026-10-04 21:10:24",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447039",
+      "transition": true,
+      "index_m3": 447.039
+    },
+    {
+      "fichier": "2026-10-04_211126.jpg",
+      "horodatage": "2026-10-04 21:11:26",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447339",
+      "transition": true,
+      "index_m3": 447.339
+    },
+    {
+      "fichier": "2026-10-04_211228.jpg",
+      "horodatage": "2026-10-04 21:12:28",
+      "bloc": 0,
+      "verite": "00447897",
+      "lu": "00447301",
+      "transition": true,
+      "index_m3": 447.301
+    },
+    {
+      "fichier": "2026-10-04_223043.jpg",
+      "horodatage": "2026-10-04 22:30:43",
+      "bloc": 1,
+      "verite": "00448019",
+      "lu": "00448077",
+      "transition": true,
+      "index_m3": 448.077
+    },
+    {
+      "fichier": "2026-10-04_223145.jpg",
+      "horodatage": "2026-10-04 22:31:45",
+      "bloc": 1,
+      "verite": "00448031",
+      "lu": "00448000",
+      "transition": true,
+      "index_m3": 448.0
+    },
+    {
+      "fichier": "2026-10-04_223247.jpg",
+      "horodatage": "2026-10-04 22:32:47",
+      "bloc": 1,
+      "verite": "00448035",
+      "lu": "00448003",
+      "transition": true,
+      "index_m3": 448.003
+    },
+    {
+      "fichier": "2026-10-04_223348.jpg",
+      "horodatage": "2026-10-04 22:33:48",
+      "bloc": 1,
+      "verite": "00448035",
+      "lu": "00448003",
+      "transition": true,
+      "index_m3": 448.003
+    },
+    {
+      "fichier": "2026-10-04_223450.jpg",
+      "horodatage": "2026-10-04 22:34:50",
+      "bloc": 1,
+      "verite": "00448036",
+      "lu": "00448006",
+      "transition": true,
+      "index_m3": 448.006
+    },
+    {
+      "fichier": "2026-10-04_223552.jpg",
+      "horodatage": "2026-10-04 22:35:52",
+      "bloc": 1,
+      "verite": "00448044",
+      "lu": "00448046",
+      "transition": true,
+      "index_m3": 448.046
+    },
+    {
+      "fichier": "2026-10-04_223654.jpg",
+      "horodatage": "2026-10-04 22:36:54",
+      "bloc": 1,
+      "verite": "00448052",
+      "lu": "00448055",
+      "transition": true,
+      "index_m3": 448.055
+    },
+    {
+      "fichier": "2026-10-04_223756.jpg",
+      "horodatage": "2026-10-04 22:37:56",
+      "bloc": 1,
+      "verite": "00448055",
+      "lu": "00448053",
+      "transition": true,
+      "index_m3": 448.053
+    },
+    {
+      "fichier": "2026-10-04_223858.jpg",
+      "horodatage": "2026-10-04 22:38:58",
+      "bloc": 1,
+      "verite": "00448055",
+      "lu": "00448053",
+      "transition": true,
+      "index_m3": 448.053
+    },
+    {
+      "fichier": "2026-10-04_223959.jpg",
+      "horodatage": "2026-10-04 22:39:59",
+      "bloc": 1,
+      "verite": "00448055",
+      "lu": "00448050",
+      "transition": true,
+      "index_m3": 448.05
+    },
+    {
+      "fichier": "2026-10-04_224101.jpg",
+      "horodatage": "2026-10-04 22:41:01",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224203.jpg",
+      "horodatage": "2026-10-04 22:42:03",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224304.jpg",
+      "horodatage": "2026-10-04 22:43:04",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224406.jpg",
+      "horodatage": "2026-10-04 22:44:06",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224508.jpg",
+      "horodatage": "2026-10-04 22:45:08",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224609.jpg",
+      "horodatage": "2026-10-04 22:46:09",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224711.jpg",
+      "horodatage": "2026-10-04 22:47:11",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224813.jpg",
+      "horodatage": "2026-10-04 22:48:13",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_224915.jpg",
+      "horodatage": "2026-10-04 22:49:15",
+      "bloc": 2,
+      "verite": "00448056",
+      "lu": "00448056",
+      "transition": false,
+      "index_m3": 448.056
+    },
+    {
+      "fichier": "2026-10-04_225016.jpg",
+      "horodatage": "2026-10-04 22:50:16",
+      "bloc": 2,
+      "verite": "00448063",
+      "lu": "00448065",
+      "transition": true,
+      "index_m3": 448.065
+    },
+    {
+      "fichier": "2026-10-04_225118.jpg",
+      "horodatage": "2026-10-04 22:51:18",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225220.jpg",
+      "horodatage": "2026-10-04 22:52:20",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225451.jpg",
+      "horodatage": "2026-10-04 22:54:51",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225553.jpg",
+      "horodatage": "2026-10-04 22:55:53",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225655.jpg",
+      "horodatage": "2026-10-04 22:56:55",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225757.jpg",
+      "horodatage": "2026-10-04 22:57:57",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_225859.jpg",
+      "horodatage": "2026-10-04 22:58:59",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230000.jpg",
+      "horodatage": "2026-10-04 23:00:00",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230102.jpg",
+      "horodatage": "2026-10-04 23:01:02",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230204.jpg",
+      "horodatage": "2026-10-04 23:02:04",
+      "bloc": 3,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230305.jpg",
+      "horodatage": "2026-10-04 23:03:05",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230407.jpg",
+      "horodatage": "2026-10-04 23:04:07",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230509.jpg",
+      "horodatage": "2026-10-04 23:05:09",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230610.jpg",
+      "horodatage": "2026-10-04 23:06:10",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230712.jpg",
+      "horodatage": "2026-10-04 23:07:12",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    },
+    {
+      "fichier": "2026-10-04_230814.jpg",
+      "horodatage": "2026-10-04 23:08:14",
+      "bloc": 4,
+      "verite": "00448063",
+      "lu": "00448063",
+      "transition": true,
+      "index_m3": 448.063
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+  index.html : la page web affichée dans le navigateur.
+
+  HTML = la STRUCTURE de la page (titres, cartes, zones de graphique).
+  Le style (couleurs, tailles) est dans static/style.css.
+  Le comportement (charger les données, dessiner) est dans static/script.js.
+
+  {{ url_for('static', filename='...') }} est une instruction de Flask :
+  elle est remplacée par la bonne adresse du fichier avant l'envoi au navigateur.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Pour que la page s'adapte aux écrans de téléphone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suivi de consommation d'eau</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Plotly : la bibliothèque JavaScript qui dessine les graphiques interactifs -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Suivi de consommation d'eau</h1>
+    <p class="sous-titre">Lecture automatique du compteur par caméra</p>
+  </header>
+
+  <main>
+    <!-- Les 4 cartes de chiffres clés. Le "--" est remplacé par script.js -->
+    <section id="statistiques">
+      <div class="carte">
+        <h2>Index actuel</h2>
+        <p class="valeur" id="valeur-index">--</p>
+        <p class="detail">m³</p>
+      </div>
+      <div class="carte">
+        <h2>Consommation totale</h2>
+        <p class="valeur" id="valeur-total">--</p>
+        <p class="detail">litres</p>
+      </div>
+      <div class="carte">
+        <h2>Débit moyen</h2>
+        <p class="valeur" id="valeur-moyenne">--</p>
+        <p class="detail">L/min</p>
+      </div>
+      <div class="carte carte-pic">
+        <h2>Pic de consommation</h2>
+        <p class="valeur" id="valeur-maximum">--</p>
+        <p class="detail" id="heure-maximum">L/min</p>
+      </div>
+    </section>
+
+    <!-- Les zones où Plotly dessinera les deux graphiques -->
+    <section class="graphique-bloc">
+      <div id="graphique-debit" class="graphique"></div>
+    </section>
+    <section class="graphique-bloc">
+      <div id="graphique-index" class="graphique"></div>
+    </section>
+
+    <section class="actions">
+      <button id="bouton-traiter">Lire les nouvelles photos</button>
+      <span id="message"></span>
+    </section>
+  </main>
+
+  <!-- Le script est chargé À LA FIN : les éléments ci-dessus existent déjà -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
