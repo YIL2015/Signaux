@@ -9,9 +9,11 @@ Tout le code est commenté ligne par ligne pour être lu par une débutante.
 Commence par ce fichier, puis lis les autres documents dans cet ordre :
 
 1. **`README.md`** (ce fichier) : vue d'ensemble, installation, utilisation
-2. **`docs/methode.md`** : comment marche chaque étape, et POURQUOI ces choix
-3. **`docs/resultats.md`** : les résultats mesurés et les limites
-4. Le code, dans l'ordre du trajet d'une photo (voir plus bas)
+2. **`docs/cours_python.md`** : un cours de Python construit sur ce projet
+   (classes, listes, NumPy, OpenCV, SQLite, Flask…), avec exercices
+3. **`docs/methode.md`** : comment marche chaque étape, et POURQUOI ces choix
+4. **`docs/resultats.md`** : les résultats mesurés et les limites
+5. Le code, dans l'ordre conseillé à la fin de `docs/cours_python.md`
 
 ---
 
