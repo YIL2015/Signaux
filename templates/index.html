@@ -3,61 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Suivi de consommation</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
 <body>
-  <h1>Suivi de consommation</h1>
+  <header>
+    <h1>Suivi de consommation</h1>
+  </header>
 
-  <!-- Les chiffres clés -->
-  <p>Moyenne : <strong id="moyenne">-</strong></p>
-  <p>Pic : <strong id="max">-</strong> (<span id="max_t">-</span>)</p>
+  <main>
+    <section id="statistiques">
+      <div class="carte">
+        <h2>Consommation moyenne</h2>
+        <p id="valeur-moyenne">--</p>
+      </div>
+      <div class="carte">
+        <h2>Pic de consommation</h2>
+        <p id="valeur-maximum">--</p>
+        <p id="heure-maximum"></p>
+      </div>
+    </section>
 
-  <!-- Le graphique -->
-  <canvas id="graphique"></canvas>
+    <section id="graphique-section">
+      <div id="graphique"></div>
+    </section>
+  </main>
 
-  <script>
-    // true = données bidon (pour travailler seul), false = vraies données de Flask
-    const MODE_TEST = true;
-
-    const DONNEES_TEST = {
-      points: [
-        { t: "2026-10-02T08:00:00", conso: 0.12 },
-        { t: "2026-10-02T08:05:00", conso: 0.10 },
-        { t: "2026-10-02T08:10:00", conso: 0.12 },
-        { t: "2026-10-02T08:15:00", conso: 0.10 }
-      ],
-      stats: { moyenne: 0.175, max: 0.30, max_t: "2026-10-02T08:05:00", total: 0.70 }
-    };
-
-    async function chargerDonnees() {
-      if (MODE_TEST) return DONNEES_TEST;
-      const reponse = await fetch("/api/data");   // appelle la route de ta collègue
-      return await reponse.json();
-    }
-
-    async function afficher() {
-      const { points, stats } = await chargerDonnees();
-
-      // 1. Remplir les chiffres
-      document.getElementById("moyenne").textContent = stats.moyenne;
-      document.getElementById("max").textContent = stats.max;
-      document.getElementById("max_t").textContent = stats.max_t;
-
-      // 2. Dessiner le graphique
-      new Chart(document.getElementById("graphique"), {
-        type: "line",
-        data: {
-          labels: points.map(p => p.t),
-          datasets: [
-            { label: "Consommation", data: points.map(p => p.conso), borderColor: "blue" },
-            { label: "Moyenne", data: points.map(() => stats.moyenne),
-              borderColor: "orange", borderDash: [6, 6], pointRadius: 0 }
-          ]
-        }
-      });
-    }
-
-    afficher();
-  </script>
 </body>
 </html>
