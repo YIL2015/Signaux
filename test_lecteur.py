@@ -5,7 +5,7 @@ import cv2
 from classes.lecteur_compteur import LecteurCompteur
 
 # Zone un peu plus large que ton rectangle : le compteur bouge un peu d'une photo à l'autre
-ZONE = (120, 80, 300, 50)   # x, y, largeur, hauteur
+ZONE = (120, 75, 300, 60)   # x, y, largeur, hauteur
 
 lecteur = LecteurCompteur("images", ZONE)
 

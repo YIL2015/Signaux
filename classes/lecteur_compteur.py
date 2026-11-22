@@ -9,6 +9,8 @@ class LecteurCompteur:
 
     NB_CHIFFRES = 8          # le compteur a 8 rouleaux
     LARGEUR_CHIFFRE = 29     # largeur d'un rouleau sur la photo (en pixels)
+    MARGE = 3                # pixels enlevés de chaque côté d'un chiffre (bords du rouleau)
+    TAILLE_MINI = 50         # les taches blanches plus petites sont du bruit
 
     def __init__(self, dossier_images, zone):
         # zone = (x, y, largeur, hauteur) de la bande des chiffres, un peu large
@@ -32,8 +34,19 @@ class LecteurCompteur:
         gris = cv2.cvtColor(bande, cv2.COLOR_BGR2GRAY)
         gris = cv2.GaussianBlur(gris, (3, 3), 0)
         # seuil adapté à chaque petit coin de l'image : gère les ombres
-        return cv2.adaptiveThreshold(gris, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                     cv2.THRESH_BINARY_INV, 21, 8)
+        noir_blanc = cv2.adaptiveThreshold(gris, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                           cv2.THRESH_BINARY_INV, 21, 8)
+        return self.enlever_bruit(noir_blanc)
+
+    def enlever_bruit(self, image):
+        """Efface les petites taches blanches (poussières, points parasites)."""
+        # chaque tache blanche reçoit un numéro et on connaît sa surface
+        nb, numeros, stats, _ = cv2.connectedComponentsWithStats(image, connectivity=8)
+        propre = np.zeros_like(image)
+        for i in range(1, nb):                      # 0 = le fond noir, on le saute
+            if stats[i, cv2.CC_STAT_AREA] >= self.TAILLE_MINI:
+                propre[numeros == i] = 255          # on garde les grosses taches
+        return propre
 
     def trouver_bord_gauche(self, image):
         """Trouve où commence le 1er chiffre (le compteur bouge un peu d'une photo à l'autre)."""
@@ -49,6 +62,7 @@ class LecteurCompteur:
         chiffres = []
         for i in range(self.NB_CHIFFRES):
             a = debut + i * self.LARGEUR_CHIFFRE
-            morceau = image[:, a:a + self.LARGEUR_CHIFFRE]
+            # on enlève une petite marge à gauche et à droite : ce sont les bords du rouleau
+            morceau = image[:, a + self.MARGE:a + self.LARGEUR_CHIFFRE - self.MARGE]
             chiffres.append(cv2.resize(morceau, (28, 40)))
         return chiffres
