@@ -10,7 +10,7 @@ class LecteurCompteur:
     NB_CHIFFRES = 8          # le compteur a 8 rouleaux
     LARGEUR_CHIFFRE = 29     # largeur d'un rouleau sur la photo (en pixels)
     MARGE = 3                # pixels enlevés de chaque côté d'un chiffre (bords du rouleau)
-    TAILLE_MINI = 50         # les taches blanches plus petites sont du bruit
+    TAILLE_MINI = 20         # les taches blanches plus petites sont du bruit
 
     def __init__(self, dossier_images, zone):
         # zone = (x, y, largeur, hauteur) de la bande des chiffres, un peu large
@@ -32,10 +32,16 @@ class LecteurCompteur:
         """Photo -> bande noir et blanc (chiffres en blanc, fond noir)."""
         bande = self.recadrer(self.charger(nom_image))
         gris = cv2.cvtColor(bande, cv2.COLOR_BGR2GRAY)
-        gris = cv2.GaussianBlur(gris, (3, 3), 0)
+        # on agrandit l'image 3 fois : les traits fins des chiffres sont mieux préservés
+        gris = cv2.resize(gris, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+        gris = cv2.GaussianBlur(gris, (7, 7), 0)
         # seuil adapté à chaque petit coin de l'image : gère les ombres
         noir_blanc = cv2.adaptiveThreshold(gris, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                           cv2.THRESH_BINARY_INV, 21, 8)
+                                           cv2.THRESH_BINARY_INV, 45, 10)
+        # on revient à la taille d'origine
+        noir_blanc = cv2.resize(noir_blanc, None, fx=1 / 3, fy=1 / 3,
+                                interpolation=cv2.INTER_AREA)
+        noir_blanc = (noir_blanc > 127).astype(np.uint8) * 255   # blanc ou noir, rien entre
         return self.enlever_bruit(noir_blanc)
 
     def enlever_bruit(self, image):
