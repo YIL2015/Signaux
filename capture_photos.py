@@ -8,10 +8,12 @@ import cv2
 class CapteurCamera:
     """Prend des photos avec une webcam USB et les enregistre dans un dossier."""
 
-    def __init__(self, index_camera=0, dossier="images", images_chauffe=10):
+    def __init__(self, index_camera=0, dossier="images", secondes_chauffe=3):
         self.index_camera = index_camera
         self.dossier = dossier
-        self.images_chauffe = images_chauffe
+        # Temps (en secondes) laissé à la caméra pour régler sa luminosité.
+        # 10 images ne suffisaient pas (0,3 s -> photos noires) ; il faut ~2,5 s.
+        self.secondes_chauffe = secondes_chauffe
         os.makedirs(self.dossier, exist_ok=True)
 
     def prendre_photo(self):
@@ -23,8 +25,9 @@ class CapteurCamera:
                 "Essaie un autre index (1, 2...) ou ferme les autres applications qui l'utilisent."
             )
         try:
-            # Les premières images sont souvent sombres : on les jette
-            for _ in range(self.images_chauffe):
+            # Les premières images sont sombres : on les jette pendant 3 s
+            depart = time.time()
+            while time.time() - depart < self.secondes_chauffe:
                 camera.read()
             ok, image = camera.read()
             if not ok:
@@ -57,7 +60,8 @@ def lister_cameras(max_index=5):
     for i in range(max_index):
         camera = cv2.VideoCapture(i, cv2.CAP_DSHOW)
         if camera.isOpened():
-            for _ in range(10):
+            depart = time.time()
+            while time.time() - depart < 3:
                 camera.read()
             ok, image = camera.read()
             if ok:
@@ -77,4 +81,4 @@ if __name__ == "__main__":
     index = int(input("Index de la caméra à utiliser (regarde les photos test_camera_X.jpg) : "))
 
     capteur = CapteurCamera(index_camera=index, dossier="images")
-    capteur.capture_continue(intervalle_secondes=300)  # 5 minutes
+    capteur.capture_continue(intervalle_secondes=60)  # 1 minute
